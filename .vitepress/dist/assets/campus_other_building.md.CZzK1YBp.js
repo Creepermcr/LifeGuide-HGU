@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as a}from"./chunks/framework.DFTT1zkb.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"campus/other_building.md","filePath":"campus/other_building.md"}'),r={name:"campus/other_building.md"};function o(n,s,c,i,_,d){return t(),a("div")}const l=e(r,[["render",o]]);export{m as __pageData,l as default};
