@@ -1,40 +1,57 @@
 import { defineConfig } from 'vitepress'
 import timeline from 'vitepress-markdown-timeline';
 
-const time =  new Date().toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' }) +  ' GMT+8:00';
+const time = new Date().toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' }) + ' GMT+8:00';
 
-
-// https://vitepress.dev/reference/site-config
 export default defineConfig({
   base: "/docs/",
-  title: "河地大生活手册",
-  description: "河地大生活手册 · 你的河北大道 601 号生活指南",
+  title: "河地大新生手册",
+  description: "河地大新生手册 · 你的河北大道 601 号生活指南",
+  head: [
+    ['link', { rel: 'icon', href: 'icon.png' }],
+    ['link', { rel: 'apple-touch-icon', href: 'icon.png' }],
+    ['meta', { name: 'mobile-web-app-capable', content: 'yes' }],
+    ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
+    ['meta', { name: 'apple-mobile-web-app-title', content: '河地大新生手册' }],
+    [
+      'meta',
+      { name: 'apple-mobile-web-app-status-bar-style', content: 'black' },
+    ],
+  ],
+  lang: "zh-CN",
+
   markdown: {
+    container: {
+      tipLabel: '💡 提示',
+      warningLabel: '⚠️ 注意',
+      dangerLabel: '‼️ 警告',
+      infoLabel: '📖 信息',
+      detailsLabel: '📜 详细信息',
+    },
     config: (md) => {
-    md.use(timeline)
+      md.use(timeline)
     }
   },
-  themeConfig: {
-    // https://vitepress.dev/reference/default-theme-config
-    nav: [
-      { text: '关于', link: '/' }
-    ],
 
+  themeConfig: {
+    outline: {
+      label: '页面导航',
+      level: [2, 3],
+    },
     sidebar: [
       {
         text: '初入地大',
         items: [
           { text: '学校概况', link: '/begin/intro' },
-          { text: '新生必看', link: '/begin/qa' },
-          { text: '谨防诈骗', link: '/begin/anti_fraud' },
           { text: '入学准备', link: '/begin/preparation' },
-          { text: '交通出行', link: '/begin/transport' },
-          { text: '校园流量卡', link: '/begin/calling_card' },
-          { text: '军训', link: '/begin/military_training' }
+          { text: '开学报到', link: '/begin/registration' },
+          { text: '校园卡', link: '/begin/calling_card' },
+          { text: '军训', link: '/begin/military_training' },
+          { text: '谨防诈骗', link: '/begin/anti_fraud' }
         ]
       },
       {
-        text: '校园',
+        text: '校园环境',
         items: [
           { text: '地图', link: '/campus/maphgu' },
           { text: '教学楼', link: '/campus/academic_building' },
@@ -48,7 +65,7 @@ export default defineConfig({
         ]
       },
       {
-        text: '生活',
+        text: '生活指南',
         items: [
           { text: '生活费', link: '/life/alimony' },
           { text: '必备小程序/APP/公众号', link: '/life/app' },
@@ -56,12 +73,25 @@ export default defineConfig({
           { text: '宿舍', link: '/life/dormitory' },
           { text: '早操晚自习', link: '/life/exercise' },
           { text: '医保', link: '/life/medical_insurance' },
-          { text: '校园网', link: '/life/network' },
           { text: '公共交通', link: '/life/public_transportation' },
           { text: '校内交通', link: '/life/transport' }
         ]
       }
     ],
+
+    docFooter: {
+      prev: false,
+      next: false
+    },
+
+    darkModeSwitchLabel: '外观',
+    sidebarMenuLabel: '菜单',
+    returnToTopLabel: '返回顶部',
+
+    editLink: {
+      pattern: "https://pd.qq.com/s/394eynhsj?b=9",
+      text: "加入河地大校园频道",
+    },
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/Creepermcr/LifeGuide-HGU' }
