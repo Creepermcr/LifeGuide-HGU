@@ -4,12 +4,12 @@ import timeline from 'vitepress-markdown-timeline';
 const time = new Date().toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' }) + ' GMT+8:00';
 
 export default defineConfig({
-  base: "/docs/",
+  base: "/",
   title: "河地大新生手册",
   description: "河地大新生手册 · 你的河北大道 601 号生活指南",
   head: [
-    ['link', { rel: 'icon', href: 'icon.png' }],
-    ['link', { rel: 'apple-touch-icon', href: 'icon.png' }],
+    ['link', { rel: 'icon', href: '/head.png' }],
+    ['link', { rel: 'apple-touch-icon', href: '/head.png' }],
     ['meta', { name: 'mobile-web-app-capable', content: 'yes' }],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
     ['meta', { name: 'apple-mobile-web-app-title', content: '河地大新生手册' }],
@@ -40,20 +40,31 @@ export default defineConfig({
     },
     sidebar: [
       {
-        text: '初入地大',
+        text: '前言',
+        link: '/begin/',
+        collapsed: true,
         items: [
-          { text: '学校概况', link: '/begin/intro' },
-          { text: '入学准备', link: '/begin/preparation' },
-          { text: '开学报到', link: '/begin/registration' },
-          { text: '校园卡', link: '/begin/calling_card' },
-          { text: '军训', link: '/begin/military_training' },
-          { text: '谨防诈骗', link: '/begin/anti_fraud' }
+          { text: '致新生的你', link: '/begin/advise' },
         ]
       },
       {
-        text: '校园环境',
+        text: '入学篇',
+        // link: '/begin/',
+        collapsed: true,
         items: [
-          { text: '地图', link: '/campus/maphgu' },
+          { text: '入学准备', link: '/entrance/preparation' },
+          { text: '开学报到', link: '/entrance/registration' },
+          { text: '地图', link: '/entrance/maphgu' },
+          { text: '校园卡', link: '/entrance/calling_card' },
+          { text: '军训', link: '/entrance/military_training' },
+          { text: '谨防诈骗', link: '/entrance/anti_fraud' }
+        ]
+      },
+      {
+        text: '学校篇',
+        collapsed: true,
+        items: [
+          { text: '学校概况', link: '/campus/intro' },
           { text: '教学楼', link: '/campus/academic_building' },
           { text: '食堂', link: '/campus/canteen' },
           { text: '1953街区', link: '/campus/1953block' },
@@ -65,7 +76,8 @@ export default defineConfig({
         ]
       },
       {
-        text: '生活指南',
+        text: '生活篇',
+        collapsed: true,
         items: [
           { text: '生活费', link: '/life/alimony' },
           { text: '必备小程序/APP/公众号', link: '/life/app' },
