@@ -1,1 +1,0 @@
-import{_ as e,o as t,c as a}from"./chunks/framework.DFTT1zkb.js";const i=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"campus/canteen.md","filePath":"campus/canteen.md"}'),n={name:"campus/canteen.md"};function c(s,r,o,p,m,_){return t(),a("div")}const f=e(n,[["render",c]]);export{i as __pageData,f as default};
