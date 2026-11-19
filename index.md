@@ -9,7 +9,7 @@ hero:
   actions:
     - theme: brand
       text: 📖 开始阅读
-      link: /begin/intro
+      link: /begin/
 features:
   - icon: 💡
     title: 这<span style="text-decoration:line-through">暂时</span>不是官方文档

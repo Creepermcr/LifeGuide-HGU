@@ -6,22 +6,25 @@ LifeGuide-HGU
 
 使用 VitePress 构建，基于 [Survive-HFUT](https://github.com/Survive-HFUT/survive-hfut.github.io) 改编
 
-## 安装依赖并构建
+## 安装依赖并运行
 
-确保你已经安装了[NodeJs](https://nodejs.org/)和[npm](https://www.npmjs.com/)
+确保你已经安装了 [Node.js](https://nodejs.org/) 和 [pnpm](https://pnpm.io/)
 
 ```sh
 # 进入目录
-cd /www/wwwroot/your-project
+cd LifeGuide-HGU/
 
 # 安装依赖
-npm install
+pnpm install
 
-# 运行
-npm run docs:dev
+# 启动开发服务器（默认 http://localhost:5173）
+pnpm run dev
 
-## 构建文档
-npm run docs:build
+# 构建文档，产物输出到 .vitepress/dist
+pnpm run build
+
+# 本地预览构建产物
+pnpm run preview
 ```
 
 ## LICENSE
